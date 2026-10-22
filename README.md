@@ -4,12 +4,12 @@
 
 ## Скачать
 
-### 🪟 [Windows — скачать установщик EXE](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-Setup-1.8.1.exe)
-### 🐧 [Linux — скачать AppImage](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-linux-x86_64.AppImage)
+### 🪟 [Windows — скачать установщик EXE](https://github.com/ilayskol/Orbita/releases/download/v1.8.2/Orbita-Setup-1.8.2.exe)
+### 🐧 [Linux — скачать AppImage](https://github.com/ilayskol/Orbita/releases/download/v1.8.2/Orbita-1.8.2-linux-x86_64.AppImage)
 
-[Общий ZIP для обеих систем — 227 МБ](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-Windows-Linux.zip)
+[Общий ZIP для обеих систем — 227 МБ](https://github.com/ilayskol/Orbita/releases/download/v1.8.2/Orbita-1.8.2-Windows-Linux.zip)
 
-**Версия 1.8.1.** Windows: скачайте EXE и запустите — распаковывать его не нужно. Linux: разрешите AppImage запускаться как программе и откройте файл. Если выбрали общий ZIP, сначала распакуйте его.
+**Версия 1.8.2.** Windows: скачайте EXE и запустите — распаковывать его не нужно. Linux: разрешите AppImage запускаться как программе и откройте файл. Если выбрали общий ZIP, сначала распакуйте его.
 
 > **Code → Download ZIP** скачивает материалы этой страницы. Для установки используйте ссылки выше.
 
@@ -19,7 +19,7 @@
 
 Ниже — полная памятка. Нажмите на картинку, чтобы открыть её в полном размере.
 
-[![Орбита: установка, настройка офферов и порядка формы, выплаты и FCN](images/Orbita-1.8.1-Guide.png)](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-Guide.png)
+[![Орбита: установка, настройка офферов и порядка формы, выплаты и FCN](images/Orbita-1.8.2-Guide.png)](https://github.com/ilayskol/Orbita/releases/download/v1.8.2/Orbita-1.8.2-Guide.png)
 
 <details>
 <summary><strong>Открыть текстовую инструкцию и сведения о проверке</strong></summary>
@@ -33,7 +33,7 @@
 
 Далее: **Импорт → Выплаты → Скопировать суммы**. Для FCN есть отдельная сводка и Excel. «Добавить файлы» дополняет отчёт, «Новая выгрузка» начинает другой. Ранее сохранённые выгрузки доступны в «Истории».
 
-## Проверка версии 1.8.1
+## Проверка версии 1.8.2
 
 Windows: проверены первый запуск, настройка, сохранение после перезапуска, восстановление истории, импорт двух исходных CSV, расчёт и Excel. Linux: AppImage собрана, тесты локальной истории и настроек и запуск с песочницей в Linux-контейнере прошли; полный рабочий сценарий на обычном Linux-десктопе ещё не проверен.
 
