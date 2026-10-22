@@ -2,16 +2,18 @@
 
 Локальная статистика без ежемесячных мучений. **by ilayskol**
 
-## ⬇️ [Скачать приложение — Windows + Linux x64](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-Windows-Linux.zip)
+## Скачать
 
-**Версия 1.8.1 · ZIP, 227 МБ · установщики внутри**
+### 🪟 [Windows — скачать установщик EXE](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-Setup-1.8.1.exe)
+### 🐧 [Linux — скачать AppImage](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-linux-x86_64.AppImage)
 
-Распакуйте архив: **Windows → EXE**, **Linux → AppImage**.
+[Общий ZIP для обеих систем — 227 МБ](https://github.com/ilayskol/Orbita/releases/download/v1.8.1/Orbita-1.8.1-Windows-Linux.zip)
 
-> **Скачивайте приложение по ссылке выше.** Зелёная кнопка **Code → Download ZIP** скачивает только материалы этой страницы, без установщиков.
+**Версия 1.8.1.** Windows: скачайте EXE и запустите — распаковывать его не нужно. Linux: разрешите AppImage запускаться как программе и откройте файл. Если выбрали общий ZIP, сначала распакуйте его.
+
+> **Code → Download ZIP** скачивает материалы этой страницы. Для установки используйте ссылки выше.
 
 Выплаты, суммы для вставки в таблицу и отчёты FCN из CSV / Excel. Обработка и история — локально на компьютере.
-
 
 ## Как настроить и пользоваться
 
