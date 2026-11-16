@@ -19,7 +19,7 @@
 
 Ниже — полная памятка. Нажмите на картинку, чтобы открыть её в полном размере.
 
-[![Орбита: установка, настройка офферов и порядка формы, выплаты и FCN](images/Orbita-1.8.5-Guide.png)](https://github.com/ilayskol/Orbita/releases/download/v1.8.5/Orbita-1.8.5-Guide.png)
+[![Орбита: установка, настройка офферов и порядка формы, выплаты и FCN](images/Orbita-1.8.5-Guide-Neutral.png)](https://github.com/ilayskol/Orbita/releases/download/v1.8.5/Orbita-1.8.5-Guide-Neutral.png)
 
 <details>
 <summary><strong>Открыть текстовую инструкцию и сведения о проверке</strong></summary>
