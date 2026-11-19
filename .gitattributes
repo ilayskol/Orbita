@@ -1,0 +1,5 @@
+# The bundled document has CSP script hashes. Preserve every byte across platforms.
+macos/assets/index.html -text
+*.png binary
+*.icns binary
+*.ico binary
