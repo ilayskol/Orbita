@@ -1,4 +1,4 @@
-ОРБИТА · macOS · by ilayskol
+ОРБИТА · macOS 13 и новее · by ilayskol
 
 1. В меню Apple → Об этом Mac посмотрите процессор. Apple M1/M2/M3/M4/M5 и новее: arm64. Intel: x64.
 2. Откройте соответствующий DMG и перетащите Орбиту в «Программы» (Applications).
