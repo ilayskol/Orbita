@@ -1,0 +1,8 @@
+node_modules/
+dist/
+qa/
+qa-native-home/
+native-boot.log
+native-window.swift
+package-check.json
+SHA256SUMS-mac-*.txt
