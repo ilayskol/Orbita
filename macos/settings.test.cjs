@@ -7,7 +7,9 @@ const path=require('node:path');
 const {createSettingsStore,sanitizeConfig,MAX_BYTES}=require('./settings.cjs');
 const draft=()=>({version:1,offers:[],template:[],ownWebs:[],statuses:['approved','1'],commissionRate:'',commissionMode:'grossup',decimal:',',filterMonth:false,timeMode:'source'});
 const configured=()=>({...draft(),offers:[{id:102,name:'demo_offer_10',company:'FCN',country:'RU'}],template:[{offer:'demo_offer_10',company:'FCN',web:8888,country:'RU'}],ownWebs:[1001,1002]});
-async function fixture(t){const parent=await fs.mkdtemp(path.join(os.tmpdir(),'orbita-settings-'));t.after(()=>fs.rm(parent,{recursive:true,force:true}));return {parent,root:path.join(parent,'profile')};}
+// macOS /var is a system alias of /private/var. Exercise the canonical profile
+// path, just as Application Support does, without weakening symlink checks.
+async function fixture(t){const parent=await fs.realpath(await fs.mkdtemp(path.join(os.tmpdir(),'orbita-settings-')));t.after(()=>fs.rm(parent,{recursive:true,force:true}));return {parent,root:path.join(parent,'profile')};}
 
 test('fresh profile marker persists empty draft independently of archives',async t=>{
   const {root}=await fixture(t);const store=createSettingsStore(root);
