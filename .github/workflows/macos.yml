@@ -1,0 +1,60 @@
+name: macOS packages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15
+            arch: arm64
+          - runner: macos-15-intel
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: macos
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm test
+      - name: Package DMG and ZIP
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --mac dmg zip --${{ matrix.arch }} --publish never
+      - name: Verify packaged application
+        run: node verify-package.cjs dist/mac${{ matrix.arch == 'arm64' && '-arm64' || '' }}
+      - name: Install isolated UI test dependencies
+        run: npm install --no-save --package-lock=false playwright@1.62.1 exceljs@4.4.0
+      - name: Exercise settings, import, reports, exports and history using packaged ASAR
+        run: node ui-test.cjs dist/mac${{ matrix.arch == 'arm64' && '-arm64' || '' }}
+      - name: Record checksums
+        run: shasum -a 256 dist/*.dmg dist/*.zip > SHA256SUMS-mac-${{ matrix.arch }}.txt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Orbita-mac-${{ matrix.arch }}
+          path: |
+            macos/dist/*.dmg
+            macos/dist/*.zip
+            macos/SHA256SUMS-mac-*.txt
+            macos/package-check.json
+            macos/qa/result.json
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: failure()
+        with:
+          name: mac-failure-${{ matrix.arch }}
+          path: |
+            macos/native-boot.log
+            macos/qa/error.txt
+          retention-days: 3
