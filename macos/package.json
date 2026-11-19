@@ -52,7 +52,8 @@
       "entitlements": "entitlements.mac.plist",
       "entitlementsInherit": "entitlements.mac.plist",
       "notarize": false,
-      "artifactName": "Orbita-${version}-mac-${arch}.${ext}"
+      "artifactName": "Orbita-${version}-mac-${arch}.${ext}",
+      "executableName": "Орбита"
     },
     "dmg": {
       "title": "Орбита",
