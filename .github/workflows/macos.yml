@@ -1,6 +1,17 @@
 name: macOS packages
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: Architecture to build
+        type: choice
+        options: [both, arm64, x64]
+        default: both
+      arm_runner:
+        description: Native Apple Silicon runner
+        type: choice
+        options: [macos-15, macos-26]
+        default: macos-15
 permissions:
   contents: read
 jobs:
@@ -8,11 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - runner: macos-15
-            arch: arm64
-          - runner: macos-15-intel
-            arch: x64
+        include: ${{ fromJSON(inputs.target == 'arm64' && format('[{{"runner":"{0}","arch":"arm64"}}]', inputs.arm_runner) || inputs.target == 'x64' && '[{"runner":"macos-15-intel","arch":"x64"}]' || format('[{{"runner":"{0}","arch":"arm64"}},{{"runner":"macos-15-intel","arch":"x64"}}]', inputs.arm_runner)) }}
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 35
     defaults:
