@@ -64,4 +64,7 @@ jobs:
           path: |
             macos/native-boot.log
             macos/qa/error.txt
+            macos/dist/*.dmg
+            macos/dist/*.zip
+            macos/package-check.json
           retention-days: 3
